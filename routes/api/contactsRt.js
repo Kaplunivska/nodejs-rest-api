@@ -11,7 +11,7 @@ const {
 
 const { authenticate } = require("../../middlewares/authenticate");
 
-const { asyncWrapper } = require("../../helpers/helpersApi");
+const { asyncWrapper } = require("../../helpers/apiHelpers");
 
 const {
   getContactsListAction,
@@ -20,7 +20,7 @@ const {
   removeContactAction,
   updateContactAction,
   updateStatusContactAction,
-} = require("../../controllers/contactsCntrl");
+} = require("../../controllers/contactsCtr");
 
 router.use(authenticate);
 router.get("/", asyncWrapper(getContactsListAction));
@@ -29,21 +29,18 @@ router.get(
   objectIdValidation,
   asyncWrapper(getContactByIdAction)
 );
-
 router.post("/", addContactValidation, asyncWrapper(addContactAction));
 router.delete(
   "/:contactId",
   objectIdValidation,
   asyncWrapper(removeContactAction)
 );
-
 router.put(
   "/:contactId",
   objectIdValidation,
   updateContactValidation,
   asyncWrapper(updateContactAction)
 );
-
 router.patch(
   "/:contactId/favorite",
   objectIdValidation,
