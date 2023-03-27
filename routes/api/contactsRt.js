@@ -11,7 +11,7 @@ const {
 
 const { authenticate } = require("../../middlewares/authenticate");
 
-const { asyncWrapper } = require("../../helpers/apiHelpers");
+const { asyncWrapper } = require("../../helpers/helpersApi");
 
 const {
   getContactsListAction,
@@ -20,7 +20,7 @@ const {
   removeContactAction,
   updateContactAction,
   updateStatusContactAction,
-} = require("../../controllers/contactsCtr");
+} = require("../../controllers/contactsCntrl");
 
 router.use(authenticate);
 router.get("/", asyncWrapper(getContactsListAction));

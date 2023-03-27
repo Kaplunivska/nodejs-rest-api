@@ -10,7 +10,7 @@ const {
 
 const { authenticate } = require("../../middlewares/authenticate");
 
-const { asyncWrapper } = require("../../helpers/apiHelpers");
+const { asyncWrapper } = require("../../helpers/helpersApi");
 
 const {
   registrationAction,
@@ -18,7 +18,7 @@ const {
   logoutAction,
   getCurrentUserAction,
   updateSubscriptionAction,
-} = require("../../controllers/authCtr");
+} = require("../../controllers/authCntrl");
 
 router.post(
   "/users/register",
