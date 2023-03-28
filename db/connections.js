@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 
 const connectMongo = async () => {
- try {
+  try {
     mongoose.set("strictQuery", false);
-    await mongoose.connect(process.env.DB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+
+    await mongoose.connect(process.env.DB_HOST, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     });
 
     console.log("Database connection successful");
@@ -13,7 +14,9 @@ const connectMongo = async () => {
     console.log(error.message);
     process.exit(1);
   }
-
 };
 
+module.exports = { connectMongo };
+
+module.exports = { connectMongo };
 module.exports = { connectMongo };

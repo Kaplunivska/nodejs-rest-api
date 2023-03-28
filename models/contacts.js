@@ -1,4 +1,4 @@
-const { Contact } = require("../db/model");
+const { Contact } = require("../db/modelContact");
 
 const listContacts = async () => {
   const result = await Contact.find({});
@@ -25,7 +25,6 @@ const updateContact = async (contactId, body) => {
     runValidators: true,
   });
 };
-
 const updateStatusContact = async (contactId, body) => {
   const { favorite } = body;
   return Contact.findByIdAndUpdate(contactId, {
@@ -33,7 +32,6 @@ const updateStatusContact = async (contactId, body) => {
     runValidators: true,
   });
 };
-
 module.exports = {
   listContacts,
   getContactById,
