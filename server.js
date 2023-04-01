@@ -8,5 +8,4 @@ const start = async () => {
     console.log(`Server running. Use our API on port: ${process.env.PORT}`);
   });
 };
-
 start();
