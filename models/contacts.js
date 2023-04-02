@@ -25,6 +25,7 @@ const updateContact = async (contactId, body) => {
     runValidators: true,
   });
 };
+
 const updateStatusContact = async (contactId, body) => {
   const { favorite } = body;
   return Contact.findByIdAndUpdate(contactId, {
